@@ -1,32 +1,21 @@
+import React from "react";
+import styled from "styled-components";
+import Theme from "../Theme/Theme";
+import { ButtonProps } from "./Button.types";
 
-  import React from "react";
-  import styled from "styled-components";
-  
-  import { ButtonProps } from "./Button.types";
-  
-  const StyledDiv = styled.div`
-    background-color: white;
-    border: 1px solid black;
-    padding: 16px;
-    width: 360px;
-    text-align: center;
-  
-    ${(props) =>
-      props.theme === "secondary" &&
-      `background-color: black;
-       color: white;`}
-  `;
-  
-  const StyledHeading = styled.h1`
-    font-size: 32px;
-  `;
-  
-  const StyledDescription = styled.h2``;
-  
-  const Button: React.FC<ButtonProps> = ({ theme }) => (
-    <StyledDiv data-testid="Button" theme={theme}>
-        <h1>New Component Button</h1>
-    </StyledDiv>
-  );
-  
-  export default Button;
+const BaseButton = styled.div`
+  text-align: center;
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+  border-color: ${(props) => `${props.theme.primary};`}
+  border: 2px solid;
+    ${(props) => `border-radius: ${props.theme.radius}px;`};
+`;
+
+const Button: React.FC<ButtonProps> = (props) => (
+  <BaseButton onClick={props.onClick} theme={Theme}>
+    Primary Button
+  </BaseButton>
+);
+
+export default Button;

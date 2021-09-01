@@ -11,5 +11,5 @@ module.exports = (componentName) => ({
 
     export const Secondary = () => <${componentName} theme="secondary" />;
 `,
-  extension: `.stories.tsx`
+  extension: `.stories.tsx`,
 });

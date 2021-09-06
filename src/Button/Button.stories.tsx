@@ -7,4 +7,6 @@ export default {
 
 export const Primary = () => <Button>Sign Up</Button>;
 
-export const Secondary = () => <Button>Sign Up</Button>;
+export const Secondary = () => <Button secondary>Sign Up</Button>;
+
+export const ButtonSample = () => <button>Sign Up</button>;

@@ -14,7 +14,7 @@ const BaseButton = styled.div`
 
 const Button: React.FC<ButtonProps> = (props) => (
   <BaseButton onClick={props.onClick} theme={Theme}>
-    Primary Button
+    {props.children}
   </BaseButton>
 );
 

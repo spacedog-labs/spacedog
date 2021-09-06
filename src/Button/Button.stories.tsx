@@ -5,6 +5,6 @@ export default {
   title: "Button",
 };
 
-export const Primary = () => <Button theme="primary" />;
+export const Primary = () => <Button>Sign Up</Button>;
 
-export const Secondary = () => <Button theme="secondary" />;
+export const Secondary = () => <Button>Sign Up</Button>;

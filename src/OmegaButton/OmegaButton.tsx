@@ -1,18 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import Theme from "../Theme/Theme";
-import { ButtonProps } from "./Button.types";
+import { OmegaButtonProps } from "./OmegaButton.types";
 
 const PrimaryButton = styled.div`
   display: inline-block;
   text-align: center;
   margin:4px;
-  padding: 4px;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   cursor: pointer;
   transition: background-color .3s, border-color .3s;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
   font-family: Roboto, sans-serif;
   &:hover {
@@ -33,12 +33,12 @@ const SecondaryButton = styled.div`
   display: inline-block;
   text-align: center;
   margin:4px;
-  padding: 4px;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
   cursor: pointer;
   transition: background-color .3s;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: bold;
   font-family: Roboto, sans-serif;
   &:hover {
@@ -53,7 +53,7 @@ const SecondaryButton = styled.div`
     user-select: none;
 `;
 
-const Button: React.FC<ButtonProps> = (props) => {
+const OmegaButton: React.FC<OmegaButtonProps> = (props) => {
   if (props.secondary) {
     return (
       <SecondaryButton onClick={props.onClick} theme={Theme}>
@@ -69,4 +69,4 @@ const Button: React.FC<ButtonProps> = (props) => {
   }
 };
 
-export default Button;
+export default OmegaButton;

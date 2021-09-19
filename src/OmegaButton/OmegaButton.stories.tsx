@@ -1,27 +1,27 @@
 import React from "react";
-import Button from "./Button";
+import OmegaButton from "./OmegaButton";
 
 export default {
-  title: "Button",
+  title: "OmegaButton",
 };
 
 export const Primary = () => (
-  <Button
+  <OmegaButton
     onClick={() => {
       alert("Works!");
     }}
   >
     Sign Up
-  </Button>
+  </OmegaButton>
 );
 
 export const Secondary = () => (
-  <Button
+  <OmegaButton
     secondary
     onClick={() => {
       alert("Works!");
     }}
   >
     Sign Up
-  </Button>
+  </OmegaButton>
 );

@@ -60,9 +60,7 @@ This will generate:
   /YourComponentName
     YourComponentName.tsx
     YourComponentName.stories.tsx
-    YourComponentName.test.tsx
     YourComponentName.types.ts
-    YourComponentName.scss
 ```
 
 The default templates for each file can be modified under `util/templates`.

@@ -1,15 +1,14 @@
 module.exports = (componentName) => ({
-  content: `
-    import React from "react";
-    import ${componentName} from "./${componentName}";
+  content: `import React from "react";
+import ${componentName} from "./${componentName}";
 
-    export default {
-    title: "${componentName}"
-    };
+export default {
+  title: "${componentName}"
+};
 
-    export const Primary = () => <${componentName} theme="primary" />;
+export const Primary = () => <${componentName}/>;
 
-    export const Secondary = () => <${componentName} theme="secondary" />;
+export const Secondary = () => <${componentName}/>;
 `,
   extension: `.stories.tsx`,
 });

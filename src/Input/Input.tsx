@@ -24,10 +24,12 @@ const TitleText = styled.div<{ focused: boolean }>`
   -ms-user-select: none;
   user-select: none;
 
-  margin-left: 6px;
+  margin-left: 12px;
   margin-top: ${(props) => (props.focused ? "1" : "9")}px;
   font-weight: ${(props) => (props.focused ? "lighter" : "normal")};
   transition: font-size 0.3s, margin-top 0.3s, color 0.3s;
+  color: ${(props) =>
+    props.focused ? props.theme.lightgrey : props.theme.grey};
 
   font-size: ${(props) => (props.focused ? "0.6" : "1")}em;
   pointer-events: none;

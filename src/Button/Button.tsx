@@ -16,8 +16,8 @@ const PrimaryButton = styled.div`
   font-weight: bold;
   font-family: Roboto, sans-serif;
   &:hover {
-    background-color: ${(props) => `${props.theme.darkgrey};`}
-    border-color: ${(props) => `${props.theme.darkgrey};`}
+    background-color: ${(props) => `${props.theme.tertiary};`}
+    border-color: ${(props) => `${props.theme.tertiary};`}
   }
   background-color: ${(props) => `${props.theme.primary};`}
   border: 2px solid ${(props) => `${props.theme.primary};`}
@@ -42,7 +42,7 @@ const SecondaryButton = styled.div`
   font-weight: bold;
   font-family: Roboto, sans-serif;
   &:hover {
-    background-color: ${(props) => `${props.theme.grey};`}
+    background-color: ${(props) => `${props.theme.lightgrey};`}
   }
   border-color: ${(props) => `${props.theme.primary};`}
   border: 2px solid;

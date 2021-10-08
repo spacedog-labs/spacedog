@@ -12,7 +12,7 @@ const PrimaryCheckbox = styled.div`
   cursor: pointer;
   transition: background-color .3s;
   &:hover {
-    background-color: ${(props) => `${props.theme.grey};`}
+    background-color: ${(props) => `${props.theme.lightgrey};`}
   }
   border-color: ${(props) => `${props.theme.primary};`}
   border: 2px solid;

@@ -11,7 +11,6 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
   transition: width 0.5s;
-  min-width: 14em;
 `;
 
 const BranchContainer = styled.div`
@@ -38,7 +37,6 @@ const CurrentBranch = styled.div<{ theme: Theme; selected: boolean }>`
   }
   border-radius: ${(props) => `${props.theme.radius}px;`}
   padding: 2px;
-  padding-left: 8px;
   padding-right: 8px;
 `;
 
@@ -63,6 +61,10 @@ const Expander = styled.div<{ expanded: boolean; theme: Theme }>`
   }
   padding: 3px;
   border-radius: 50%;
+  margin-left: 1em;
+`;
+
+const IconContainer = styled.div`
   margin-left: 1em;
 `;
 
@@ -111,25 +113,27 @@ const RenderBranch = (branch: Branch, level: number) => {
         }}
       >
         <LeftBranchContainer>
-          {branch.icon != null ? branch.icon : <></>}
+          {branch.branches.length > 0 ? (
+            <Expander
+              expanded={expanded}
+              theme={Theme}
+              onClick={(ev) => {
+                ev.stopPropagation();
+                expand();
+              }}
+            >
+              <ExpanderIcon />
+            </Expander>
+          ) : (
+            <></>
+          )}
+          <IconContainer>
+            {branch.icon != null ? branch.icon : <></>}
+          </IconContainer>
           <BranchName title={branch.name} selected={branch.selected}>
             {branch.name}
           </BranchName>
         </LeftBranchContainer>
-        {branch.branches.length > 0 ? (
-          <Expander
-            expanded={expanded}
-            theme={Theme}
-            onClick={(ev) => {
-              ev.stopPropagation();
-              expand();
-            }}
-          >
-            <ExpanderIcon />
-          </Expander>
-        ) : (
-          <></>
-        )}
       </CurrentBranch>
       <ChildrenBranches expanded={expanded} level={level}>
         {branch.branches.map((child) => RenderBranch(child, level))}

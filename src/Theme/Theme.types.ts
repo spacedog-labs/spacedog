@@ -4,6 +4,7 @@ type Theme = {
   tertiary: string;
   grey: string;
   lightgrey: string;
+  lightblue: string;
   darkgrey: string;
   radius: number;
 };

@@ -50,14 +50,19 @@ const BranchName = styled.div<{ selected: boolean }>`
   max-width: 15em;
 `;
 
-const Expander = styled.div<{ expanded: boolean; theme: Theme }>`
+const Expander = styled.div<{
+  expanded: boolean;
+  theme: Theme;
+  hover: boolean;
+}>`
   height: 1em;
   width: 1em;
   transform: rotate(${(props) => (props.expanded ? "0deg" : "180deg")});
   cursor: pointer;
   transition: background-color 0.2s, transform 0.3s;
   &:hover {
-    background-color: ${(props) => `${props.theme.darkgrey};`};
+    background-color: ${(props) =>
+      props.hover ? `${props.theme.darkgrey};` : "none"};
   }
   padding: 3px;
   border-radius: 50%;
@@ -65,12 +70,13 @@ const Expander = styled.div<{ expanded: boolean; theme: Theme }>`
 `;
 
 const IconContainer = styled.div`
+  min-width: 1em;
   margin-left: 1em;
 `;
 
 const ChildrenBranches = styled.div<{ expanded: boolean; level: number }>`
   display: ${(props) => (props.expanded ? "block" : "none")};
-  margin-left: ${(props) => (props.level * 16).toString()}px;
+  margin-left: ${(props) => (props.level * 12).toString()}px;
 `;
 
 const Tree: React.FC<TreeProps> = (props) => {
@@ -113,20 +119,17 @@ const RenderBranch = (branch: Branch, level: number) => {
         }}
       >
         <LeftBranchContainer>
-          {branch.branches.length > 0 ? (
-            <Expander
-              expanded={expanded}
-              theme={Theme}
-              onClick={(ev) => {
-                ev.stopPropagation();
-                expand();
-              }}
-            >
-              <ExpanderIcon />
-            </Expander>
-          ) : (
-            <></>
-          )}
+          <Expander
+            expanded={expanded}
+            theme={Theme}
+            hover={branch.branches.length > 0}
+            onClick={(ev) => {
+              ev.stopPropagation();
+              expand();
+            }}
+          >
+            {branch.branches.length > 0 ? <ExpanderIcon /> : <></>}
+          </Expander>
           <IconContainer>
             {branch.icon != null ? branch.icon : <></>}
           </IconContainer>

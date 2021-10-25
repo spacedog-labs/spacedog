@@ -46,6 +46,10 @@ const BranchName = styled.div<{ selected: boolean }>`
   ${(props) => (props.selected ? "font-weight: bold;" : "")}
   font-family: Roboto, sans-serif;
   margin-left: 1em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 15em;
 `;
 
 const Expander = styled.div<{ expanded: boolean; theme: Theme }>`
@@ -108,7 +112,9 @@ const RenderBranch = (branch: Branch, level: number) => {
       >
         <LeftBranchContainer>
           {branch.icon != null ? branch.icon : <></>}
-          <BranchName selected={branch.selected}>{branch.name}</BranchName>
+          <BranchName title={branch.name} selected={branch.selected}>
+            {branch.name}
+          </BranchName>
         </LeftBranchContainer>
         {branch.branches.length > 0 ? (
           <Expander

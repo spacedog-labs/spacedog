@@ -44,7 +44,7 @@ export const Primary = () => {
     onClickData: { props: { pepe: "happy pepe" } },
     branches: [
       {
-        name: "child1",
+        name: "System.Runtime.CompilerServices.NullableContextAttribute",
         expanded: false,
         icon: (
           <svg

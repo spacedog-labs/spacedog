@@ -3,6 +3,7 @@ export interface ChoiceGroupProps {
   items: ChoiceGroupItem[];
   disabled?: boolean;
   selectionCallback?: (selectedIndex: number) => void;
+  children: React.ReactNode;
 }
 
 export type ChoiceGroupItem = {

@@ -2,6 +2,7 @@ import { MutableRefObject } from "react";
 
 export interface TreeProps {
   branch: Branch;
+  children: React.ReactNode;
 }
 
 export interface Branch {
@@ -15,8 +16,10 @@ export interface Branch {
   ) => void;
   selected?: boolean;
   onClickData?: BranchOnClickProps;
+  children: React.ReactNode;
 }
 
 export interface BranchOnClickProps {
   props: any;
+  children: React.ReactNode;
 }

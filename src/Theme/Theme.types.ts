@@ -6,5 +6,7 @@ type Theme = {
   lightgrey: string;
   lightblue: string;
   darkgrey: string;
+  offwhite: string;
   radius: number;
+  shadow: string;
 };

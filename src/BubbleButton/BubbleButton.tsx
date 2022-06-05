@@ -11,13 +11,14 @@ const PrimaryButton = styled.div`
   padding-left: 2em;
   padding-right: 2em;
   cursor: pointer;
-  transition: background-color .3s, border-color .3s;
+  transition: background-color .2s, border-color .3s;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: regular;
   font-family: Roboto, sans-serif;
   &:hover {
     background-color: ${(props) => `${props.theme.tertiary};`}
     border-color: ${(props) => `${props.theme.tertiary};`}
+    box-shadow: ${(props) => `${props.theme.shadow};`}
   }
   background-color: ${(props) => `${props.theme.primary};`}
   border: 2px solid ${(props) => `${props.theme.primary};`}
@@ -37,12 +38,13 @@ const SecondaryButton = styled.div`
   padding-left: 2em;
   padding-right: 2em;
   cursor: pointer;
-  transition: background-color .3s;
+  transition: background-color .2s;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: regular;
   font-family: Roboto, sans-serif;
   &:hover {
-    background-color: ${(props) => `${props.theme.lightgrey};`}
+    background-color: ${(props) => `${props.theme.offwhite};`}
+    box-shadow: ${(props) => `${props.theme.shadow};`}
   }
   border-color: ${(props) => `${props.theme.primary};`}
   border: 2px solid;

@@ -13,8 +13,6 @@ It also features:
 - [Storybook](https://storybook.js.org/) to help you create and show off your components
 - [Jest](https://jestjs.io/) and [React Testing Library](https://github.com/testing-library/react-testing-library) enabling testing of the components
 
-[**Read my blog post about why and how I created this project skeleton ▸**](https://blog.harveydelaney.com/creating-your-own-react-component-library/)
-
 ## Development
 
 ### Testing
@@ -43,7 +41,7 @@ To export your Storybook as static files:
 npm run storybook:export
 ```
 
-You can then serve the files under `storybook-static` using S3, GitHub pages, Express etc. I've hosted this library at: https://www.harveydelaney.com/react-component-library
+You can then serve the files under `storybook-static` using S3, GitHub pages, Express etc. The library is hosted: [Here](https://www.harveydelaney.com/react-component-library)
 
 ### Generating New Components
 
@@ -65,7 +63,7 @@ This will generate:
 
 The default templates for each file can be modified under `util/templates`.
 
-Don't forget to add the component to your `index.ts` exports if you want the library to export the component!
+> Don't forget to add the component to your `index.ts` exports if you want the library to export the component!
 
 ### Installing Component Library Locally
 
@@ -141,6 +139,10 @@ For example, let's say you installed `harvey-component-library` into your projec
 
 Yes you can.
 
-[Read this section of my blog post](https://blog.harveydelaney.com/creating-your-own-react-component-library/#introducing-code-splitting-optional-) to find out how.
+[Read this section of the originators blog post](https://blog.harveydelaney.com/creating-your-own-react-component-library/#introducing-code-splitting-optional-) to find out how.
 
 Or check out [this commit](https://github.com/HarveyD/react-component-library/commit/94631be5a871f3b39dbc3e9bd3e75a8ae5b3b759) to see what changes are neccesary to implement it.
+
+## Acknowledgments
+
+[**Read the originators blog post ▸**](https://blog.harveydelaney.com/creating-your-own-react-component-library/)
